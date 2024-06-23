@@ -38,6 +38,6 @@ is to count how many items exist that have an age equal to or greater than 50, a
 }
 
 // Print the final count 
-echo "Count of items with age  >= 50 :" $count.PHP_EOL;
+echo "Count of items with age  >= 50 :" . $count . PHP_EOL;
 
 ?>
