@@ -3,7 +3,8 @@ which contains a data key and the value is a string which contains items in the 
 is to count how many items exist that have an age equal to or greater than 50, and print final value The php file is like:  -->
 
 <?php
-    $ch = curl_init('https://coderbyte.com/api/challenges/json/age_counting');
+    $url = 'https://coderbyte.com/api/challenges/json/age-counting';
+    $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HEADER, 0);
     $data = curl_exec($ch);
