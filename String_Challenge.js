@@ -8,7 +8,7 @@
 
 function canFormBinaryTree(strArr) {
 	const childParentMap = new Map();
-	const ParentChildrenMap = new Map();
+	const parentChildrenMap = new Map();
 	const nodes = new Set();
 
 	// Parse the input and build the maps
@@ -32,13 +32,13 @@ function canFormBinaryTree(strArr) {
 		childParentMap.set(child, parent);
 
 		// Map parent to children
-		if (!ParentChildrenMap.has(parent)) {
-			ParentChildrenMap.set(parent, []);
+		if (!parentChildrenMap.has(parent)) {
+			parentChildrenMap.set(parent, []);
 		}
-		ParentChildrenMap.get(parent).push(child);
+		parentChildrenMap.get(parent).push(child);
 
-		// 4 parent cannot have more than two children
-		if (ParentChildrenMap.get(parent).length > 2) {
+		// A parent cannot have more than two children
+		if (parentChildrenMap.get(parent).length > 2) {
 			return "false";
 		}
 	}
@@ -46,8 +46,8 @@ function canFormBinaryTree(strArr) {
 	// Find the root (a node that is not a child of any node)
 
 	let rootCount = 0;
-	for (let not of nodes) {
-		if (!childParentMap.has(nodes)) {
+	for (let node of nodes) {
+		if (!childParentMap.has(node)) {
 			rootCount++;
 		}
 	}
