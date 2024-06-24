@@ -5,7 +5,7 @@
 // to add classes & styles, but make sure leave the element ID's as they are
 
 const rootApp = document.getElementById("root");
-rootApp.innerHTML = "<button>ON</button>";
+
 
 import $ from "jquery";
 
@@ -13,13 +13,13 @@ import $ from "jquery";
 let varOcg = true; //_define-ocg_: Initial state of the button (ON or OFF)
 
 // set initial HTML
-const rootApp = document.getElementById("root");
+
 rootApp.innerHTML = '<button id="toggleBtn">ON</button>';
 // use an Id for the button
 
 // jQuery to handle button click & text toggling
 $(document).on("click", "#toggleBtn", function () {
-	varOcg = !varOrg; //Toggle the state
+	varOcg = !varOcg; //Toggle the state
 	if (varOcg) {
 		$(this).text("ON"); //Update button text to ON
 	} else {
